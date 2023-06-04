@@ -17,9 +17,13 @@ import { GrocerDeliverOrderComponent } from './grocer-deliver-order/grocer-deliv
 import { GrocerPrepareProductsComponent } from './grocer-prepare-products/grocer-prepare-products.component';
 import { AccounterRecordDeliveryComponent } from './accounter-record-delivery/accounter-record-delivery.component';
 import { AccounterRecordPaymentComponent } from './accounter-record-payment/accounter-record-payment.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ProductsAllComponent } from './products-all/products-all.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  // {path: '', component: AppComponent},
   {path:'client', component: ClientComponent},
   {path: 'admin', component: AdminComponent, 
     children:  [
@@ -47,7 +51,14 @@ const routes: Routes = [
       {path: 'record-payment', component: AccounterRecordPaymentComponent}
     ]
 },
-  {path: '**', component: E404Component}
+{path: '', component: HomeComponent},
+{path: 'login', component: LoginComponent},
+{path: 'reset-Password', component: ResetPasswordComponent},
+{path: 'products', component:ProductsAllComponent},
+{path: 'products/:productType', component:ProductsAllComponent},
+{path: 'products/:productType/:productCategory', component:ProductsAllComponent},
+{path: 'products/:productType/:productCategory/:productSubcategory', component:ProductsAllComponent},
+{path: '**', component: E404Component}
 ];
 
 @NgModule({

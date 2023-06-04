@@ -19,6 +19,12 @@ import { GrocerPrepareProductsComponent } from './grocer-prepare-products/grocer
 import { GrocerDeliverOrderComponent } from './grocer-deliver-order/grocer-deliver-order.component';
 import { AccounterRecordDeliveryComponent } from './accounter-record-delivery/accounter-record-delivery.component';
 import { AccounterRecordPaymentComponent } from './accounter-record-payment/accounter-record-payment.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { ClientRegisterComponent } from './client-register/client-register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsAllComponent } from './products-all/products-all.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +44,17 @@ import { AccounterRecordPaymentComponent } from './accounter-record-payment/acco
     GrocerPrepareProductsComponent,
     GrocerDeliverOrderComponent,
     AccounterRecordDeliveryComponent,
-    AccounterRecordPaymentComponent
+    AccounterRecordPaymentComponent,
+    LoginComponent,
+    HomeComponent,
+    ClientRegisterComponent,
+    ResetPasswordComponent,
+    ProductsAllComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
