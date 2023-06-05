@@ -10,44 +10,20 @@
 			<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
 				<ul class="navbar-nav mb-lg-0 bg-dark">
 				<!-- Instrumentos de cuerdas-->
-					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="btn-group d-inline" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <li class="nav-item dropdown align-items-center">
+					<a class="navbar-link" href="products" role="button" data-bs-toggle="dropdown" aria-expanded="false" [style.textDecoration]="'none'"[style.color]="'#FFFFFF8C'" >
 					Instrumentos de cuerdas
 					</a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Guitarras</a></li>
-						<li><a class="dropdown-item" href="#">Bajos</a></li>
-						<li><a class="dropdown-item" href="#">Pianos</a></li>
-					</ul>
-				</li>
-					<ul>
-						<!--Percusión-->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Percusión
-							</a>
-						</li>
-					</ul>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Baterías Acústicas</a></li>
-						<li><a class="dropdown-item" href="#">Batería Electrónica </a></li>
-					</ul>
-					<ul>
-						<!--Amplificadores-->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Amplificadores
-							</a>
-						</li>
-					</ul>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">Cabezales</a></li>
-						<li><a class="dropdown-item" href="#">Cajas</a></li>
-					</ul>
-					<!--Accesorios-->
-					<li class="nav-item">
-						<a class="nav-link" href="#">Accesorios</a>
-					</li>
+            <button type="button" class="btn dropdown-toggle-split" ngbDropdownToggle [style.color]="'#FFFFFF8C'"></button>
+            <ul class="dropdown-menu" ngbDropdownMenu>
+              <button ngbDropdownItem>One</button>
+              <button ngbDropdownItem>Two</button>
+              <button ngbDropdownItem>Four!</button>
+            </ul>
+          </li>
+          </div>
+
 				</ul>	
 				</div>
 			</div>

@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsAllComponent } from './products-all/products-all.component';
 
 @NgModule({
@@ -51,10 +52,12 @@ import { ProductsAllComponent } from './products-all/products-all.component';
     ResetPasswordComponent,
     ProductsAllComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgbDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
