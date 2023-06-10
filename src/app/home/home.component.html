@@ -1,8 +1,8 @@
-<header>
+<body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index1.html">
-        <img src="../html/img/musicpro.png" alt="logo" height="25px" />
+        <img src="assets\musicpro.png" alt="logo" height="25px" />
       </a>
       <button
         class="navbar-toggler"
@@ -42,7 +42,7 @@
         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
           <button type="button" class="btn btn-secondary" ngbDropdownToggle>Accesorios varios</button>
           <div class="dropdown-menu" ngbDropdownMenu>
-            <button (click)="redireccionar('products/accesorios/audifonos')" ngbDropdownItem>Audifonos</button>
+            <button (click)="redireccionar('products/accesorios/audifonos')" ngbDropdownItem>Audífonos</button>
             <button (click)="redireccionar('products/accesorios/monitores')" ngbDropdownItem>Monitores</button>
             <button (click)="redireccionar('products/accesorios/parlantes')" ngbDropdownItem>Parlantes</button>
             <button (click)="redireccionar('products/accesorios/cables')" ngbDropdownItem>Cables</button>
@@ -54,6 +54,6 @@
       </div>
     </div>
   </nav>
-</header>
+</body>
 
 <router-outlet></router-outlet>

@@ -5,3 +5,19 @@
 .card-product{
     width: 380px;
 }
+
+.overflow-example{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.image-size {
+    height: 150px;
+    object-fit: contain;
+}
+
+.card-space {
+    height: 90px;
+}
+
