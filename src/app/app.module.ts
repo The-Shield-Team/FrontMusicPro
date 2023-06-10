@@ -26,6 +26,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsAllComponent } from './products-all/products-all.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProductsAllComponent } from './products-all/products-all.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

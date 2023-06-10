@@ -15,121 +15,42 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="collapse navbar-collapse justify-content-between"
-        id="navbarSupportedContent"
-      >
-        <ul class="navbar-nav mb-lg-0 bg-dark btn-group d-flex" 
-        role="group"
-        aria-label="Button group with nested dropdown">
-
-          <!-- Instrumentos de cuerdas-->
-        <!--   <div 
-            class="btn-group d-flex"
-            ngbDropdown
-            role="group"
-            aria-label="Button group with nested dropdown"
-          > -->
-            <li class="nav-item dropdown align-items-center" ngbDropdown>
-              <a
-                class="navbar-link"
-                href="products"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                [style.textDecoration]="'none'"
-                [style.color]="'#FFFFFF8C'"
-              >
-                Instrumentos de cuerdas
-              </a>
-              <button
-                type="button"
-                class="btn dropdown-toggle-split"
-                ngbDropdownToggle
-                [style.color]="'#FFFFFF8C'"
-              ></button>
-              <ul class="dropdown-menu" ngbDropdownMenu>
-                <button ngbDropdownItem>Guitarras</button>
-                <button ngbDropdownItem>Bajo</button>
-                <button ngbDropdownItem>Piano</button>
-              </ul>
-            </li>
-            <li class="nav-item dropdown align-items-center">
-              <a
-                class="navbar-link"
-                href="products"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                [style.textDecoration]="'none'"
-                [style.color]="'#FFFFFF8C'"
-              >
-                Percusión
-              </a>
-              <button
-                type="button"
-                class="btn dropdown-toggle-split"
-                ngbDropdownToggle
-                [style.color]="'#FFFFFF8C'"
-              ></button>
-              <ul class="dropdown-menu" ngbDropdownMenu>
-                <button ngbDropdownItem>Baterias Acústicas</button>
-                <button ngbDropdownItem>Baterias Electrónica</button>
-              </ul>
-            </li>
-            <li class="nav-item dropdown align-items-center">
-              <a
-                class="navbar-link"
-                href="products"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                [style.textDecoration]="'none'"
-                [style.color]="'#FFFFFF8C'"
-              >
-                Amplificadores
-              </a>
-              <button
-                type="button"
-                class="btn dropdown-toggle-split"
-                ngbDropdownToggle
-                [style.color]="'#FFFFFF8C'"
-              ></button>
-              <ul class="dropdown-menu" ngbDropdownMenu>
-                <button ngbDropdownItem>Cabezales</button>
-                <button ngbDropdownItem>Cajas</button>
-              </ul>
-            </li>
-            <li class="nav-item dropdown align-items-center">
-              <a
-                class="navbar-link"
-                href="products"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                [style.textDecoration]="'none'"
-                [style.color]="'#FFFFFF8C'"
-              >
-                Accesorios Varios
-              </a>
-              <button
-                type="button"
-                class="btn dropdown-toggle-split"
-                ngbDropdownToggle
-                [style.color]="'#FFFFFF8C'"
-              ></button>
-              <ul class="dropdown-menu" ngbDropdownMenu>
-                <button ngbDropdownItem>Audifonos</button>
-                <button ngbDropdownItem>Monitores</button>
-                <button ngbDropdownItem>Parlantes</button>
-                <button ngbDropdownItem>Cables</button>
-                <button ngbDropdownItem>Micrófonos</button>
-                <button ngbDropdownItem>Interfaces</button>
-                <button ngbDropdownItem>Mixers</button>              
-              </ul>
-            </li>
-       <!--  </div> -->
-        </ul>
+      <!-- -- -->
+      <div class="btn-group me-3">
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary" ngbDropdownToggle>Instrumentos de Cuerdas</button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button (click)="redireccionar('products/cuerdas/guitarras')" ngbDropdownItem>Guitarras </button>
+            <button (click)="redireccionar('products/cuerdas/bajos')"ngbDropdownItem>Bajos</button>
+            <button (click)="redireccionar('products/cuerdas/pianos')"ngbDropdownItem>Pianos</button>
+          </div>
+        </div>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary" ngbDropdownToggle>Percusión</button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button (click)="redireccionar('products/percusion/bateriasAcusticas')" ngbDropdownItem>Baterías Acústicas</button>
+            <button (click)="redireccionar('products/percusion/bateriasElectronicas')"ngbDropdownItem>Batería Electrónicas</button>
+          </div>
+        </div>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary" ngbDropdownToggle>Amplificadores</button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button (click)="redireccionar('products/amplificadores/cabezales')" ngbDropdownItem>Cabezales</button>
+            <button (click)="redireccionar('products/amplificadores/cajas')" ngbDropdownItem>Cajas</button>
+          </div>
+        </div>
+        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary" ngbDropdownToggle>Accesorios varios</button>
+          <div class="dropdown-menu" ngbDropdownMenu>
+            <button (click)="redireccionar('products/accesorios/audifonos')" ngbDropdownItem>Audifonos</button>
+            <button (click)="redireccionar('products/accesorios/monitores')" ngbDropdownItem>Monitores</button>
+            <button (click)="redireccionar('products/accesorios/parlantes')" ngbDropdownItem>Parlantes</button>
+            <button (click)="redireccionar('products/accesorios/cables')" ngbDropdownItem>Cables</button>
+            <button (click)="redireccionar('products/accesorios/microfonos')" ngbDropdownItem>Micrófonos</button>
+            <button (click)="redireccionar('products/accesorios/interfaces')" ngbDropdownItem>Interfaces</button>
+            <button (click)="redireccionar('products/accesorios/mixers')" ngbDropdownItem>Mixers</button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

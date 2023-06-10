@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products-all',
   templateUrl: './products-all.component.html',
-  styleUrls: ['./products-all.component.css']
+  styleUrls: ['./products-all.component.css'],
 })
-export class ProductsAllComponent implements OnInit{ 
+export class ProductsAllComponent implements OnInit {
   productType = this.route.snapshot.paramMap.get('productType');
   productCategory = this.route.snapshot.paramMap.get('productCategory');
-  productSubcategory = this.route.snapshot.paramMap.get('productSubcategory')
+  productSubcategory = this.route.snapshot.paramMap.get('productSubcategory');
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService
+  ) {}
 
-ngOnInit() {
-
-}}
-
+  products: any[] = [];
+  ngOnInit() {
+    this.productsService.getProducts().subscribe((products) => {
+      this.products = products;
+    });
+  }
+}
