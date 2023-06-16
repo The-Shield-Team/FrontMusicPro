@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProductsAllComponent } from './products-all/products-all.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
   // {path: '', component: AppComponent},
@@ -55,6 +56,7 @@ const routes: Routes = [
 {path: 'login', component: LoginComponent},
 {path: 'reset-Password', component: ResetPasswordComponent},
 {path: 'products', component:ProductsAllComponent},
+{path: 'product/:product_id', component:ProductDetailComponent},
 {path: 'products/:productType', component:ProductsAllComponent},
 {path: 'products/:productType/:productCategory', component:ProductsAllComponent},
 {path: 'products/:productType/:productCategory/:productSubcategory', component:ProductsAllComponent},

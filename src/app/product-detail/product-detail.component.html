@@ -1,1 +1,37 @@
-<p>product-detail works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
+<app-home></app-home>
+<main class="container w-75 m-auto mt-5">
+
+    <section class="product row">
+
+        
+        <div class="product__image col-6">
+            <img src="{{ product.image }}" alt="" id="product_image">
+        </div>
+
+        <div class="product__info col-6">
+            <h1 class="product__info--title">{{ product.name }}</h1>
+            <hr>
+
+            
+            <p class="product__info--description">{{ product.description }}</p>
+            <hr>
+            <p class="product__info--price">{{ product.price }}</p>
+            <button class="product__info--button">Agregar al carrito</button>
+            <button class="product__info--button_alt">Ver stock en tienda</button>
+        </div>
+    </section>
+    <section class="ilustration">
+
+    </section>
+
+    <section class="info">
+
+
+    </section>
+
+
+
+</main>
