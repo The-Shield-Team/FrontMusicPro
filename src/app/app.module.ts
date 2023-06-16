@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsAllComponent } from './products-all/products-all.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ClientRegisterComponent,
     ResetPasswordComponent,
-    ProductsAllComponent
+    ProductsAllComponent,
+    ProductDetailComponent
   ],
   
   imports: [
