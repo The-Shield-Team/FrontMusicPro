@@ -15,4 +15,12 @@ export class ProductsService {
 
     return this.http.get<any[]>(sectionURL);
   }
+
+  getProduct(id: number): Observable<any> {
+    const sectionURL =
+    //'https://fakestoreapi.com/products';
+    'https://musicprosolutions.tech/backend/api/product/';
+
+    return this.http.get<any>(sectionURL + id);
+  }
 }
