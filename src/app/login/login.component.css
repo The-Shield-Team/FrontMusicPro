@@ -13,15 +13,15 @@
     margin-top: 1.5rem;
   }
   
-  #logo h1 {
+  #logo h4 {
     font-size: 2rem;
     font-weight: 600;
-    color: rgb(252, 202, 24);
+    color: rgb(81, 24, 252);
     margin-left: 10px;
     margin-top: 10px;
   }
   
-  h1 span {
+  h4 span {
     color: white;
   }
   
@@ -38,7 +38,7 @@
     background-color: white;
     position: absolute;
     top: 80%;
-    height: 300px;
+    height: 330px;
     width: 500px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 3px;
@@ -47,10 +47,10 @@
     align-items: center;
   }
   
-  #login-container h1 {
+  #login-container h4 {
     text-align: center;
     margin-top: 20px;
-    color: #34495e;
+    color: #10365e;
     font-weight: 500;
   
   }
@@ -76,8 +76,8 @@
   
   .lock-icon, .at-icon {
     position: absolute;
-    left: -30px;
-    bottom: 6px;
+    left: -50px;
+    bottom: 15px;
     color: #425c76;
   }
   
