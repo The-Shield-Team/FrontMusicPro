@@ -1,0 +1,91 @@
+#top {
+    height: 50vh;
+    background-color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  #logo img {
+    width: 150px;
+    object-fit: contain;
+    margin-top: 1.5rem;
+  }
+  
+  #logo h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(252, 202, 24);
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  h1 span {
+    color: white;
+  }
+  
+  .phrase {
+    color: white;
+    font-style: italic;
+    font-size: large;
+  }
+  .phrase span {
+    color: rgb(255, 208, 37);
+  }
+  
+  #login-container {
+    background-color: white;
+    position: absolute;
+    top: 80%;
+    height: 300px;
+    width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #login-container h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #34495e;
+    font-weight: 500;
+  
+  }
+  
+  
+  
+  #form-input {
+      width: 300px;
+      display: block;
+      position: relative;
+  }
+  
+  form button[type="submit"] {
+      margin-top: 15px;
+      width: 100%;
+      
+  }
+  
+  #bottom {
+    height: 50vh;
+    background-color: rgb(248, 248, 248);
+  }
+  
+  .lock-icon, .at-icon {
+    position: absolute;
+    left: -30px;
+    bottom: 6px;
+    color: #425c76;
+  }
+  
+  body {
+    background-color: red;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }

@@ -1,1 +1,44 @@
-<p>login works!</p>
+<section id="top">
+    <div id="logo">
+        <img src="assets\musicpro.png" alt="logo" height="200px" />
+    </div>
+    <div id="login-container">
+        <header>
+            <h3>Bienvenido estimado cliente</h3>
+        </header>
+
+        <form action="">
+            <mat-form-field id="form-input">
+                <mat-label >Correo</mat-label>
+                <mat-icon class="at-icon">alternate_email</mat-icon>
+                <input matInput placeholder="usuario@profesor.duoc.cl" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field id="form-input">
+                <mat-label>Contraseña</mat-label>
+                <mat-icon class="lock-icon">lock</mat-icon>
+                <input [formControl]="password" type="password" matInput>
+                <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
+            </mat-form-field>
+
+            <button type="submit" mat-stroked-button color="primary">Iniciar Sesión</button>
+        
+        </form>
+
+        <footer>
+            <div *ngIf="error">
+                <p class="error">error</p>
+            </div>
+        </footer>
+
+    </div>
+
+</section>
+
+
+
+
+<div id="bottom">
+    
+</div>
