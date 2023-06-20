@@ -28,6 +28,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsAllComponent } from './products-all/products-all.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AppRoutingModule,
     NgbModule,
     NgbDropdownModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

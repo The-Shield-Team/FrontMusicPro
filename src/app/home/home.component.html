@@ -4,15 +4,8 @@
       <a class="navbar-brand" href="index1.html">
         <img src="assets\musicpro.png" alt="logo" height="25px" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- -- -->
@@ -21,15 +14,17 @@
           <button type="button" class="btn btn-secondary" ngbDropdownToggle>Instrumentos de Cuerdas</button>
           <div class="dropdown-menu" ngbDropdownMenu>
             <button (click)="redireccionar('products/cuerdas/guitarras')" ngbDropdownItem>Guitarras </button>
-            <button (click)="redireccionar('products/cuerdas/bajos')"ngbDropdownItem>Bajos</button>
-            <button (click)="redireccionar('products/cuerdas/pianos')"ngbDropdownItem>Pianos</button>
+            <button (click)="redireccionar('products/cuerdas/bajos')" ngbDropdownItem>Bajos</button>
+            <button (click)="redireccionar('products/cuerdas/pianos')" ngbDropdownItem>Pianos</button>
           </div>
         </div>
         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
           <button type="button" class="btn btn-secondary" ngbDropdownToggle>Percusión</button>
           <div class="dropdown-menu" ngbDropdownMenu>
-            <button (click)="redireccionar('products/percusion/bateriasAcusticas')" ngbDropdownItem>Baterías Acústicas</button>
-            <button (click)="redireccionar('products/percusion/bateriasElectronicas')"ngbDropdownItem>Batería Electrónicas</button>
+            <button (click)="redireccionar('products/percusion/bateriasAcusticas')" ngbDropdownItem>Baterías
+              Acústicas</button>
+            <button (click)="redireccionar('products/percusion/bateriasElectronicas')" ngbDropdownItem>Batería
+              Electrónicas</button>
           </div>
         </div>
         <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
@@ -54,6 +49,5 @@
       </div>
     </div>
   </nav>
-</body>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
