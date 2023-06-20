@@ -52,7 +52,7 @@ const routes: Routes = [
       {path: 'record-payment', component: AccounterRecordPaymentComponent}
     ]
 },
-{path: '', component: LoginComponent},
+{path: '', component: ProductsAllComponent},
 {path: 'login', component: LoginComponent},
 {path: 'reset-Password', component: ResetPasswordComponent},
 {path: 'products', component:ProductsAllComponent},

@@ -46,9 +46,12 @@
     </div>
   </div>
 
-  <div class="icons d-flex justify-self-end mx-3 ">
+  <div class="icons d-flex justify-self-end mx-3 justify-content-center align-items-center">
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart" style="color: aliceblue;" ></mat-icon>  
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person" style="color: aliceblue;"></mat-icon>
+    <!-- Boton iniciar sesion -->
+    <button type="button" class="btn btn-secondary" [routerLink]="['/login']">
+      Iniciar Sesión
+    </button>
   </div>
 
 </nav>
