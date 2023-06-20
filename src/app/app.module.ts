@@ -39,6 +39,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ClientRegisterComponent,
     ResetPasswordComponent,
     ProductsAllComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    NavbarComponent
   ],
   
   imports: [
