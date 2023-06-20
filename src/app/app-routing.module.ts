@@ -67,7 +67,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'reset-Password', component: ResetPasswordComponent },
-  { path: 'products', component: ProductsAllComponent },
+  { path: 'products', component: ProductsAllComponent},
   { path: 'product/:product_id', component: ProductDetailComponent },
   { path: 'products/:productType', component: ProductsAllComponent },
   {

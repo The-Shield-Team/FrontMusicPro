@@ -26,22 +26,21 @@
       </div>
     </div>
   </div> -->
-
-  <div class="container mt-2 w-75 mx-auto">
-    <div class="row row-cols-3">
-      <div class="col my-2" *ngFor="let product of products">
-          <div class="card border-0 shadow h-100">
-            <img src="{{ product.image }}" alt="blog" class="card-img-top image-size" />
-            <div class="card-body">
-              <div class="text-center mb-2">
-                <span class="text-muted small">{{ product.price }}</span>
-              </div>
-              <h4 class="mb-3 text-center card-space">{{ product.name }}</h4>
-              <div class="d-flex align-items-center justify-content-center">
-                <span class="text-muted small font-weight-bold overflow-example">{{ product.description }}</span>
-              </div>
-            </div>
+<div class="container mt-2 w-75 mx-auto">
+  <div class="row row-cols-3">
+    <div class="col my-2" *ngFor="let product of products">
+      <div class="card border-0 shadow h-100">
+        <img src="{{ product.image }}" alt="blog" class="card-img-top image-size" />
+        <div class="card-body">
+          <div class="text-center mb-2">
+            <span class="text-muted small">{{ product.price }}</span>
           </div>
+          <h4 class="mb-3 text-center card-space">{{ product.name }}</h4>
+          <div class="d-flex align-items-center justify-content-center">
+            <span class="text-muted small font-weight-bold overflow-example">{{ product.description }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
