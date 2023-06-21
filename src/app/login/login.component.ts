@@ -46,13 +46,17 @@ export class LoginComponent implements OnInit {
         
         const navigationExtras: NavigationExtras = {
           state: {
-            idCliente: response.id,
-            nombre: response.name,
+            id: response.id,
+            nombre: response.nombre,
             apellido: response.apellido,
           },
         };
 
-        this.router.navigate(['products'], navigationExtras);
+        localStorage.setItem('nombre', response.nombre);
+        localStorage.setItem('apellido', response.apellido);
+        localStorage.setItem('id', response.id.toString());
+
+        this.router.navigate([''], navigationExtras);
       } else {
         this.authService.logout();
         this.error = 'Nombre de usuario o contraseña incorrectos';

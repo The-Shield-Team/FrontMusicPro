@@ -2,7 +2,7 @@ export interface User {
     token: string,
     id: number,
     userName : string,
-    name: string,
+    nombre: string,
     apellido: string,
     tipo: string,
 }

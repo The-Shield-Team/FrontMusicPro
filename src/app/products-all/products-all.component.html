@@ -29,7 +29,7 @@
 <div class="container mt-2 w-75 mx-auto">
   <div class="row row-cols-3">
     <div class="col my-2" *ngFor="let product of products">
-      <div class="card border-0 shadow h-100">
+      <div class="card border-0 shadow h-100" [routerLink]="['/product', (product.id)]">
         <img src="{{ product.image }}" alt="blog" class="card-img-top image-size" />
         <div class="card-body">
           <div class="text-center mb-2">
