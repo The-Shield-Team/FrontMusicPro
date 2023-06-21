@@ -38,4 +38,8 @@ export class ProductsAllComponent implements OnInit {
       this.products = products;
     });
   }
+
+  formatPrice(price: number) {
+    return new Intl.NumberFormat('cl-CL', { style: 'currency', currency: 'CLP' }).format(price);
+  }
 }

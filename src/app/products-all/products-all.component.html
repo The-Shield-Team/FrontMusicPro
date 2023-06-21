@@ -12,11 +12,11 @@
   <div class="container mt-2 w-75 mx-auto">
     <div class="row row-cols-3">
       <div class="col my-2" *ngFor="let product of products">
-        <div class="card border-0 shadow h-100 item" [routerLink]="['/product', (product.id)]">
+        <div class="card p-2 border-0 shadow h-100 item" [routerLink]="['/product', (product.id)]">
           <img src="{{ product.image }}" alt="blog" class="card-img-top image-size" />
           <div class="card-body">
             <div class="text-center mb-2">
-              <span class="text-muted small">{{ product.price }}</span>
+              <span class="text-muted small">{{ formatPrice(product.price) }}</span>
             </div>
             <h4 class="mb-3 text-center card-space">{{ product.name }}</h4>
             <div class="d-flex align-items-center justify-content-center">

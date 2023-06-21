@@ -8,7 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { E404Component } from './e404/e404.component';
 import { SalesmanComponent } from './salesman/salesman.component';
 import { GrocerComponent } from './grocer/grocer.component';
-import { AccounterComponent } from './accounter/accounter.component'
+import { AccounterComponent } from './accounter/accounter.component';
 import { AdminSalesReportsComponent } from './admin-sales-reports/admin-sales-reports.component';
 import { AdminStorePerformanceComponent } from './admin-store-performance/admin-store-performance.component';
 import { AdminSalesStrategiesComponent } from './admin-sales-strategies/admin-sales-strategies.component';
@@ -29,17 +29,18 @@ import { ProductsAllComponent } from './products-all/products-all.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card'
-import {MatTableModule} from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -67,9 +68,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     ResetPasswordComponent,
     ProductsAllComponent,
     ProductDetailComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -91,8 +92,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     MatSortModule,
     MatRadioModule,
     MatGridListModule,
+    MatBadgeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

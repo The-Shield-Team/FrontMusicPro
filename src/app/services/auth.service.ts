@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   isLogedIn() {
-    return this.loginSuccess.value;
+    return localStorage.getItem('token') ? true : false;
   }
 
   logout() {
