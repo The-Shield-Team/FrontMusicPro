@@ -62,12 +62,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
-    children: [{ path: '', component: ProductsAllComponent }],
+    redirectTo: 'products',
+    pathMatch: 'full',
   },
   { path: 'login', component: LoginComponent },
   { path: 'reset-Password', component: ResetPasswordComponent },
-  { path: 'products', component: ProductsAllComponent},
+  { path: 'products', component: ProductsAllComponent },
   { path: 'product/:product_id', component: ProductDetailComponent },
   { path: 'products/:productType', component: ProductsAllComponent },
   {
