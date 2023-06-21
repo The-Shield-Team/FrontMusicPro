@@ -12,7 +12,7 @@
 </div>
 
 <div *ngIf="!productType">
-  <div class="row card-product-group">
+  <!-- Card de coso <div class="row card-product-group">
     <div
       class="col-3"
       (click)="redireccionar(cardCategory.path)"
@@ -26,9 +26,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="container">
-    <div class="row row-cols-auto">
+    <div class="row">
       <div class="col" *ngFor="let product of products">
         <div class="card-product flex-item">
           <div class="card border-0 shadow h-100">
