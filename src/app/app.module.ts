@@ -41,6 +41,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { PaypalComponent } from './paypal/paypal.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -69,6 +71,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     ProductsAllComponent,
     ProductDetailComponent,
     NavbarComponent,
+    PaypalComponent,
   ],
 
   imports: [
@@ -93,6 +96,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatRadioModule,
     MatGridListModule,
     MatBadgeModule,
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
