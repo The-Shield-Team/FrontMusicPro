@@ -29,3 +29,10 @@
     height: 90px;
 }
 
+.item {
+    cursor: pointer;
+}
+
+.item:hover {
+    scale: 1.01;
+}

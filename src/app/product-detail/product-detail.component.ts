@@ -22,13 +22,15 @@ export class ProductDetailComponent {
     this.product_id = parseInt(this.route.url.split('/')[2]);
 
     this.getProduct(this.product_id);
-
-
   }
 
   getProduct(id: number) {
     this.productService.getProduct(id).subscribe((data) => {
       this.product = data;
     });
+  }
+
+  formatPrice(price: number) {
+    return new Intl.NumberFormat('cl-CL', { style: 'currency', currency: 'CLP' }).format(price);
   }
 }
