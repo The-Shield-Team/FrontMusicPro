@@ -38,6 +38,29 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    return 'login';
+    const email = this.email.value!;
+    const password = this.password.value!;
+
+    this.authService.login(email, password).subscribe((response) => {
+      if (this.authService.isLogedIn()) {
+        
+        const navigationExtras: NavigationExtras = {
+          state: {
+            id: response.id,
+            nombre: response.nombre,
+            apellido: response.apellido,
+          },
+        };
+
+        localStorage.setItem('nombre', response.nombre);
+        localStorage.setItem('apellido', response.apellido);
+        localStorage.setItem('id', response.id.toString());
+
+        this.router.navigate([''], navigationExtras);
+      } else {
+        this.authService.logout();
+        this.error = 'Nombre de usuario o contraseña incorrectos';
+      }
+    });
   }
 }

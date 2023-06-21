@@ -4,7 +4,7 @@ import { ClientComponent } from './client/client.component';
 import { AdminComponent } from './admin/admin.component';
 import { E404Component } from './e404/e404.component';
 import { AppComponent } from './app.component';
-import { SalesmanComponent} from './salesman/salesman.component';
+import { SalesmanComponent } from './salesman/salesman.component';
 import { GrocerComponent } from './grocer/grocer.component';
 import { AccounterComponent } from './accounter/accounter.component';
 import { AdminSalesReportsComponent } from './admin-sales-reports/admin-sales-reports.component';
@@ -25,46 +25,64 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routes: Routes = [
   // {path: '', component: AppComponent},
-  {path:'client', component: ClientComponent},
-  {path: 'admin', component: AdminComponent, 
-    children:  [
-      {path: 'sales-reports', component: AdminSalesReportsComponent},
-      {path: 'sales-strategies', component: AdminSalesStrategiesComponent},
-      {path: 'store-performance', component:AdminStorePerformanceComponent}
-    ]
-},
-  {path: 'salesman', component: SalesmanComponent,
+  { path: 'client', component: ClientComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
     children: [
-      {path: 'receive-orders', component: SalesmanReceiveOrdersComponent},
-      {path:'receive-payments', component: SalesmanReceivePaymentsComponent},
-      {path: 'review-products', component: SalesmanReviewProductsComponent}
-    ]
-},
-  {path: 'grocer', component: GrocerComponent,
+      { path: 'sales-reports', component: AdminSalesReportsComponent },
+      { path: 'sales-strategies', component: AdminSalesStrategiesComponent },
+      { path: 'store-performance', component: AdminStorePerformanceComponent },
+    ],
+  },
+  {
+    path: 'salesman',
+    component: SalesmanComponent,
     children: [
-      {path: 'deliver-order', component: GrocerDeliverOrderComponent},
-      {path: 'prepare-products', component: GrocerPrepareProductsComponent}
-    ]
-},
-  {path: 'accounter', component: AccounterComponent,
+      { path: 'receive-orders', component: SalesmanReceiveOrdersComponent },
+      { path: 'receive-payments', component: SalesmanReceivePaymentsComponent },
+      { path: 'review-products', component: SalesmanReviewProductsComponent },
+    ],
+  },
+  {
+    path: 'grocer',
+    component: GrocerComponent,
     children: [
-      {path: 'record-delivery', component: AccounterRecordDeliveryComponent},
-      {path: 'record-payment', component: AccounterRecordPaymentComponent}
-    ]
-},
-{path: '', component: HomeComponent},
-{path: 'login', component: LoginComponent},
-{path: 'reset-Password', component: ResetPasswordComponent},
-{path: 'products', component:ProductsAllComponent},
-{path: 'product/:product_id', component:ProductDetailComponent},
-{path: 'products/:productType', component:ProductsAllComponent},
-{path: 'products/:productType/:productCategory', component:ProductsAllComponent},
-{path: 'products/:productType/:productCategory/:productSubcategory', component:ProductsAllComponent},
-{path: '**', component: E404Component}
+      { path: 'deliver-order', component: GrocerDeliverOrderComponent },
+      { path: 'prepare-products', component: GrocerPrepareProductsComponent },
+    ],
+  },
+  {
+    path: 'accounter',
+    component: AccounterComponent,
+    children: [
+      { path: 'record-delivery', component: AccounterRecordDeliveryComponent },
+      { path: 'record-payment', component: AccounterRecordPaymentComponent },
+    ],
+  },
+  {
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full',
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'reset-Password', component: ResetPasswordComponent },
+  { path: 'products', component: ProductsAllComponent },
+  { path: 'product/:product_id', component: ProductDetailComponent },
+  { path: 'products/:productType', component: ProductsAllComponent },
+  {
+    path: 'products/:productType/:productCategory',
+    component: ProductsAllComponent,
+  },
+  {
+    path: 'products/:productType/:productCategory/:productSubcategory',
+    component: ProductsAllComponent,
+  },
+  { path: '**', component: E404Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

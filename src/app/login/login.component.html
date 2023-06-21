@@ -4,31 +4,31 @@
     </div>
     <div id="login-container">
         <header>
-            <h3>Bienvenido estimado cliente</h3>
+            <h4 class="m-3">Bienvenido estimado cliente</h4>
         </header>
 
         <form action="">
-            <mat-form-field id="form-input">
+            <mat-form-field id="form-input" appearance="outline"  class="mt-2">
                 <mat-label >Correo</mat-label>
                 <mat-icon class="at-icon">alternate_email</mat-icon>
                 <input matInput placeholder="usuario@profesor.duoc.cl" [formControl]="email" required>
                 <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
             </mat-form-field>
 
-            <mat-form-field id="form-input">
+            <mat-form-field id="form-input" appearance="outline" class="mt-2">
                 <mat-label>Contraseña</mat-label>
                 <mat-icon class="lock-icon">lock</mat-icon>
                 <input [formControl]="password" type="password" matInput>
                 <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
             </mat-form-field>
 
-            <button type="submit" mat-stroked-button color="primary">Iniciar Sesión</button>
+            <button type="submit" mat-stroked-button color="primary" (click)="login()">Iniciar Sesión</button>
         
         </form>
 
         <footer>
             <div *ngIf="error">
-                <p class="error">error</p>
+                <p class="error mt-2">Usuario o contraseña inválido.</p>
             </div>
         </footer>
 
