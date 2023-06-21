@@ -39,6 +39,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { PaypalComponent } from './paypal/paypal.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -65,7 +67,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     ClientRegisterComponent,
     ResetPasswordComponent,
     ProductsAllComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    PaypalComponent
   ],
   
   imports: [
@@ -89,6 +92,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSortModule,
     MatRadioModule,
     MatGridListModule,
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
