@@ -1,0 +1,23 @@
+<!-- Cart items component -->
+
+
+<h1>QUE WEA!</h1>
+<div class="cart-items">
+    <div class="cart-item" *ngFor="let item of cartItems$|async">
+        <div class="cart-item__image">
+            <img [src]="item.image" alt="item.name" />
+        </div>
+        <div class="cart-item__details">
+            <div class="cart-item__name">{{ item.name }}</div>
+            <div class="cart-item__price">{{ item.price | currency }}</div>
+            <div class="cart-item__quantity">
+                <button (click)="onDecrease(item)">-</button>
+                <input type="text" [value]="item.quantity" />
+                <button (click)="onIncrease(item)">+</button>
+            </div>
+            <div class="cart-item__remove">
+                <i class="fas fa-trash-alt"></i>
+            </div>
+        </div>
+    </div>
+</div>
