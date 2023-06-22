@@ -24,7 +24,7 @@
                 <p class="product__info--description">{{ product.description }}</p>
                 <hr>
                 <p class="product__info--price">{{ formatPrice(product.price) }}</p>
-                <button class="product__info--button">Agregar al carrito</button>
+                <button class="product__info--button" (click)="addItemToCart()">Agregar al carrito</button>
                 <button class="product__info--button_alt">Ver stock en tienda</button>
             </div>
         </ng-template>
