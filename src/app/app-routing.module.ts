@@ -23,6 +23,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ProductsAllComponent } from './products-all/products-all.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { PaypalComponent } from './paypal/paypal.component';
+import { LoginNewComponent } from './login-new/login-new.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 
 const routes: Routes = [
@@ -68,6 +69,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'login', component: LoginComponent },
+  { path: 'login_new', component: LoginNewComponent },
   { path: 'reset-Password', component: ResetPasswordComponent },
   { path: 'products', component: ProductsAllComponent },
   { path: 'product/:product_id', component: ProductDetailComponent },
