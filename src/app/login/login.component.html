@@ -11,7 +11,7 @@
             <mat-form-field id="form-input" appearance="outline"  class="mt-2">
                 <mat-label >Correo</mat-label>
                 <mat-icon class="at-icon">alternate_email</mat-icon>
-                <input matInput placeholder="usuario@profesor.duoc.cl" [formControl]="email" required>
+                <input matInput placeholder="Ingrese su correo" [formControl]="email" required>
                 <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
             </mat-form-field>
 

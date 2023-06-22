@@ -23,4 +23,11 @@ export class ProductsService {
 
     return this.http.get<any>(sectionURL + id);
   }
+  getProductCategory(category: string): Observable<any[]> {
+  const categoryURL = 
+  'https://musicprosolutions.tech/backend/api/product/?category=';
+  return  this.http.get<any[]>(categoryURL+category);
+
+
+  }
 }

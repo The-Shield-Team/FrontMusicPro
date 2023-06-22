@@ -43,6 +43,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { PaypalComponent } from './paypal/paypal.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ProductCategoryComponent } from './product-category/product-category.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     ProductDetailComponent,
     NavbarComponent,
     PaypalComponent,
+    ProductCategoryComponent,
   ],
 
   imports: [
