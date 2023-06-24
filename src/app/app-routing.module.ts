@@ -78,10 +78,6 @@ const routes: Routes = [
     path: 'products/:productType/:productCategory',
     component: ProductCategoryComponent,
   },
-  {
-    path: 'products/:productType/:productCategory/:productSubcategory',
-    component: ProductsAllComponent,
-  },
   { path: 'paypal', component: PaypalComponent },
   { path: 'cart', component: CartComponent },
   { path: '**', component: E404Component },

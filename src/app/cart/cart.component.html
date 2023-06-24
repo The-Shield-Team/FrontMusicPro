@@ -1,23 +1,47 @@
 <!-- Cart items component -->
 
+<div *ngIf="!cartQuantity; else content" class="mt-5">
+    <h3 class="loading text-center">Aún no tiene productos en el carro de compras
+    </h3>
 
-<h1>QUE WEA!</h1>
-<div class="cart-items">
-    <div class="cart-item" *ngFor="let item of cartItems$|async">
-        <div class="cart-item__image">
-            <img [src]="item.image" alt="item.name" />
-        </div>
-        <div class="cart-item__details">
-            <div class="cart-item__name">{{ item.name }}</div>
-            <div class="cart-item__price">{{ item.price | currency }}</div>
-            <div class="cart-item__quantity">
-                <button (click)="onDecrease(item)">-</button>
-                <input type="text" [value]="item.quantity" />
-                <button (click)="onIncrease(item)">+</button>
-            </div>
-            <div class="cart-item__remove">
-                <i class="fas fa-trash-alt"></i>
-            </div>
-        </div>
-    </div>
 </div>
+
+<ng-template #content>
+
+    <main class="cart-items w-75 mx-auto">
+        <app-products-header category="Carro de compras"></app-products-header>
+        <section class="cart-item w-75 mx-auto row" *ngFor="let item of cartItems$|async">
+            <div class="cart-item__quantity col-1">
+                <mat-icon fontIcon="keyboard_arrow_up" (click)="onIncrease(item)"></mat-icon>
+                <div type="text">{{item.quantity}}</div>
+                <mat-icon fontIcon="keyboard_arrow_down" (click)="onDecrease(item)"></mat-icon>
+            </div>
+
+            <div class="cart-item__image col-2">
+                <img [src]="item.image" alt="item.name" id="cart-item-image" />
+            </div>
+            <div class="cart-item__details col">
+                <div class="cart-item__name">{{ item.name }}</div>
+                <div class="cart-item__price">{{ item.price | currency:'CLP' }}</div>
+            </div>
+
+            <div class="cart-item__remove col-1">
+                <mat-icon fontIcon="delete"></mat-icon>
+            </div>
+        </section>
+
+        <section class="cart-summary w-75 mx-auto d-flex flex-column">
+            <div class="cart-summary__total justify-self-end align-self-end ">
+                <div class="cart-summary__title text-end">Total</div>
+                <div class="cart-summary__price">{{totalAmount$|async | currency:'CLP'}}</div>
+            </div>
+            <div class="cart-summary__checkout w-25 align-self-end">
+                <button class="product__info--button">Ir a pagar</button>
+            </div>
+        </section>
+    </main>
+
+
+
+
+</ng-template>

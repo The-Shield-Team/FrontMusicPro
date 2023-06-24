@@ -17,7 +17,7 @@
           <img src="{{ product.image }}" alt="blog" class="card-img-top image-size" />
           <div class="card-body">
             <div class="text-center mb-2">
-              <span class="text-muted small">{{ formatPrice(product.price) }}</span>
+              <span class="text-muted small">{{ product.price | currency:'CLP' }}</span>
             </div>
             <h4 class="mb-3 text-center card-space">{{ product.name }}</h4>
             <div class="d-flex align-items-center justify-content-center">

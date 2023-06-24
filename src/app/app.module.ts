@@ -48,7 +48,6 @@ import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

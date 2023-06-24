@@ -45,7 +45,7 @@ export class ProductDetailComponent {
   addItemToCart() {
     const cartItem: CartItem = {
       id: this.product.id,
-      name: this.product.title,
+      name: this.product.name,
       price: this.product.price,
       image: this.product.image,
       quantity: 1,
