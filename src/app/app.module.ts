@@ -46,6 +46,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductsHeaderComponent } from './products-header/products-header.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { CartComponent } from './cart/cart.component';
     ProductCategoryComponent,
     LoginNewComponent,
     CartComponent,
+    ProductsHeaderComponent,
   ],
 
   imports: [

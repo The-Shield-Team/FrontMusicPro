@@ -9,7 +9,8 @@
 </div>
 
 <ng-template #content>
-  <div class="container mt-2 w-75 mx-auto">
+  <div class="container w-75 mx-auto">
+    <app-products-header></app-products-header>
     <div class="row row-cols-3">
       <div class="col my-2" *ngFor="let product of products">
         <div class="card p-2 border-0 shadow h-100 item" [routerLink]="['/product', (product.id)]">
