@@ -1,6 +1,6 @@
 <!-- Cart items component -->
 
-<div *ngIf="!cartQuantity; else content" class="mt-5">
+<div *ngIf="cartQuantity === 0; else content" class="mt-5">
     <h3 class="loading text-center">Aún no tiene productos en el carro de compras
     </h3>
 
@@ -26,7 +26,7 @@
             </div>
 
             <div class="cart-item__remove col-1">
-                <mat-icon fontIcon="delete"></mat-icon>
+                <mat-icon fontIcon="delete" (click)="removeProduct(item)"></mat-icon>
             </div>
         </section>
 
@@ -36,9 +36,13 @@
                 <div class="cart-summary__price">{{totalAmount$|async | currency:'CLP'}}</div>
             </div>
             <div class="cart-summary__checkout w-25 align-self-end">
-                <button class="product__info--button">Ir a pagar</button>
+                <ngx-paypal class="mx-auto"  [config]="payPalConfig">
+                </ngx-paypal>
             </div>
+
         </section>
+
+
     </main>
 
 
