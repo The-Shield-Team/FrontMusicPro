@@ -18,7 +18,10 @@ export class AuthService {
       const token = context.token;
       const id = context.id;
 
-      localStorage.setItem('token', token);
+      if (token !== undefined) {
+        localStorage.setItem('token', token);
+      }
+
       localStorage.setItem('id', id.toString());
       this.loginSuccess.next(true);
     } catch (error) {

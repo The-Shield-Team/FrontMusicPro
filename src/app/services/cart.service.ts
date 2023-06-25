@@ -66,4 +66,9 @@ export class CartService {
   getTotalQuantity() {
     return this.cartQuantity$;
   }
+
+  clearCart() {
+    this.items$.next([]);
+    this.cartQuantity$.next(0);
+  }
 }

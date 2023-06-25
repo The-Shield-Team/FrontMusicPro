@@ -92,6 +92,10 @@ export class CartComponent implements OnInit {
     this.cartService.removeProduct(item.id);
   }
 
+  clearCart() {
+    this.cartService.clearCart();
+  }
+
   // PAYPAL
 
   private initConfig(): void {
@@ -161,11 +165,12 @@ export class CartComponent implements OnInit {
           'paymentMethod': 'PAYPAL',
         }
 
-        console.log(paymentData);
-
         this.orderService.sendOrderDetails(paymentData).subscribe((response:any) => {
           console.log(response);
         })
+
+        this.clearCart();
+        this.router.navigate(['']);
         
       },
       onCancel: (data: any, actions: any) => {
