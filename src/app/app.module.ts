@@ -47,6 +47,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
 import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,7 @@ import { ProductsHeaderComponent } from './products-header/products-header.compo
     ProductCategoryComponent,
     LoginNewComponent,
     CartComponent,
-    ProductsHeaderComponent,
+    ProductsHeaderComponent,    
   ],
 
   imports: [
@@ -104,6 +105,7 @@ import { ProductsHeaderComponent } from './products-header/products-header.compo
     MatGridListModule,
     MatBadgeModule,
     NgxPayPalModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

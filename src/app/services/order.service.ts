@@ -8,7 +8,7 @@ import { CartItemDTO } from '../interfaces/cart-item-dto';
   providedIn: 'root',
 })
 export class OrderService {
-  private orderUrl = 'http://127.0.0.1:8000/api/order';
+  private orderUrl = 'https://musicprosolutions.tech/backend/api/cart';
   private randomShippingURL = 'http://127.0.0.1:8000/api/random_shipping_price';
 
   private orderDetails: CartItemDTO[] = [];
@@ -16,13 +16,12 @@ export class OrderService {
   constructor(private http: HttpClient, private cartService: CartService) {}
 
   sendOrderDetails(paymentData: any) {
-
     let response = {
-      'payment_method': paymentData.paymentMethod,
-      'auth_code': paymentData.paymentId,
-      'price': 1,
-      'details': [] as CartItemDTO[],
-    }
+      "payment_method": paymentData.paymentMethod,
+      "auth_code": paymentData.paymentId,
+      "price": 1,
+      "details": [] as CartItemDTO[]
+    };
 
     console.log(response);
 
@@ -33,7 +32,7 @@ export class OrderService {
         const newOrderDetail: CartItemDTO = {
           product: item.id,
           quantity: item.quantity,
-          store: 1,
+          store: 1
         };
         this.orderDetails.push(newOrderDetail);
       });
@@ -44,12 +43,9 @@ export class OrderService {
       });
     });
 
-
     //Agregar detalles de la orden al body de la petición
     response.details = this.orderDetails;
-    console.log(response);
 
     return this.http.post<any>(this.orderUrl, response);
   }
-
 }

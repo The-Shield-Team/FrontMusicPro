@@ -39,7 +39,7 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private router: Router,
     private toUsd: CurrencytransformService,
-    private orderService: OrderService,
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {
@@ -158,20 +158,24 @@ export class CartComponent implements OnInit {
           data
         );
 
-
         const paymentData = {
-          'paymentId': data.id,
-          'paymentTotal': data.purchase_units[0].amount.value,
-          'paymentMethod': 'PAYPAL',
-        }
+          paymentId: data.id,
+          paymentTotal: data.purchase_units[0].amount.value,
+          paymentMethod: 'PAYPAL',
+        };
 
-        this.orderService.sendOrderDetails(paymentData).subscribe((response:any) => {
-          console.log(response);
-        })
+        this.orderService
+          .sendOrderDetails(paymentData)
+          .subscribe((response: any) => {
+            //Obtener url de la boleta en el bucket
+            let url = response['mensaje'];
+
+            //Hacer que el navegador abra la boleta en una nueva pestaña
+            window.open(url, '_download');
+          });
 
         this.clearCart();
         this.router.navigate(['']);
-        
       },
       onCancel: (data: any, actions: any) => {
         console.log('OnCancel', data, actions);
