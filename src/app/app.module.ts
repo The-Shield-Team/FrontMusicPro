@@ -48,6 +48,7 @@ import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UserCreateComponent } from './user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ProductCategoryComponent,
     LoginNewComponent,
     CartComponent,
-    ProductsHeaderComponent,    
+    ProductsHeaderComponent,
+    UserCreateComponent,    
   ],
 
   imports: [

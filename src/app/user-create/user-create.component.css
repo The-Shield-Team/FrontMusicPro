@@ -1,0 +1,23 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.ng-valid:not(form).ng-touched {
+  border-bottom: 3px solid #1bc55a;
+}
+
+.ng-invalid:not(form).ng-touched {
+  border-bottom: 3px solid #ea2c2c;
+}
