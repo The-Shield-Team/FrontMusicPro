@@ -19,7 +19,7 @@ export class ProductsService {
   getProduct(id: number): Observable<any> {
     const sectionURL =
     //'https://fakestoreapi.com/products';
-    'https://musicprosolutions.tech/backend/api/product/';
+    'https://musicprosolutions.tech/backend/api/product_stock/';
 
     return this.http.get<any>(sectionURL + id);
   }
