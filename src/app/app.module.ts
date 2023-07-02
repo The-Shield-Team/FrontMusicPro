@@ -49,6 +49,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { StockModalComponent } from './stock-modal/stock-modal.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { UserCreateComponent } from './user-create/user-create.component';
     LoginNewComponent,
     CartComponent,
     ProductsHeaderComponent,
-    UserCreateComponent,    
+    UserCreateComponent,
+    StockModalComponent,    
   ],
 
   imports: [
