@@ -47,6 +47,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
 import { LoginNewComponent } from './login-new/login-new.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +77,7 @@ import { LoginNewComponent } from './login-new/login-new.component';
     PaypalComponent,
     ProductCategoryComponent,
     LoginNewComponent,
+
   ],
 
   imports: [

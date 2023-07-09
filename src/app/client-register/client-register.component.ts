@@ -47,6 +47,29 @@ export class ClientRegisterComponent implements OnInit {
     return this.registerForm.get('password');
   }
 
+  get confirmPassword() {
+    return this.registerForm.get('confirmPassword');
+  }
+
+  get nameuser() {
+    return this.registerForm.get('nameuser');
+  }
+  get lastnameuser() {
+    return this.registerForm.get('lastnameuser');
+  }
+  get rut() {
+    return this.registerForm.get('rut');
+  }
+  get region() {
+    return this.registerForm.get('region');
+  }
+  get comuna() {
+    return this.registerForm.get('comuna');
+  }
+  get address() {
+    return this.registerForm.get('address');
+  }
+
   login() {
     if (this.registerForm.valid) {
       this.registerForm.reset();

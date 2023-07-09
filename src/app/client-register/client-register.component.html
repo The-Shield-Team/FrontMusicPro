@@ -22,9 +22,9 @@
 
             <!-- Dynamic Label -->
             <div id="spacing">
-              <label ngIf="email?.invalid && (email?.dirty || email?.touched)"
+              <label *ngIf="email?.invalid && (email?.dirty || email?.touched)"
                 class="text-danger">
-                  <label ngIf="email?.errors?.['required']">
+                  <label *ngIf="email?.errors?.['required']">
                     Debe ingresar un correo
                   </label>
                   <label *ngIf="email?.errors?.['email']">
@@ -74,9 +74,12 @@
   
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
+                <label *ngIf="nameuser?.invalid && (nameuser?.dirty || nameuser?.touched)"
+                class="text-danger" >
+                    <label *ngIf="nameuser?.errors?.['required']">
                       Debe ingresar su Nombre
                     </label>
+                </label>
               </div>
 
               <!-- Last Name User input -->
@@ -87,56 +90,68 @@
   
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
+                <label *ngIf="lastnameuser?.invalid && (lastnameuser?.dirty || lastnameuser?.touched)"
+                class="text-danger" >
+                    <label *ngIf="lastnameuser?.errors?.['required']">
                       Debe ingresar su Apellido
                     </label>
+                </label>
               </div>
   
-
-
-
               <!-- Rut User input -->
               <div class="form-outline">
-                <input formControlName="nameuser" type="nameuser" id="nameuser" class="form-control form-control-lg"
-                  placeholder="Nombre" />
+                <input formControlName="rut" type="rut" id="rut" class="form-control form-control-lg"
+                  placeholder="Rut" />
               </div>
   
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
-                      Debe ingresar du Nombre
+                <label *ngIf="rut?.invalid && (rut?.dirty || rut?.touched)"
+                class="text-danger">
+                    <label *ngIf="rut?.errors?.['required']">
+                      Debe ingresar su Rut
                     </label>
+                </label>
+
+
               </div>
 
-           
+               <!-- Region input -->
+               <div class="form-outline">
+                  <select formControlName="region" type="region" id="region"
+                  class="form-select" aria-label="Default select example">
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+              </div>
+  
+
+              <!-- Comuna input -->
+              <div class="form-outline">
+                <select formControlName="comuna" type="comuna" id="comuna"
+                class="form-select" aria-label="Default select example">
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+            </div> 
+
               <!-- Address input -->
               <div class="form-outline">
-                <input formControlName="nameuser" type="nameuser" id="nameuser" class="form-control form-control-lg"
-                  placeholder="Nombre" />
+                <input formControlName="address" type="address" id="address" class="form-control form-control-lg"
+                  placeholder="Ingrese su Dirección"/>
               </div>
   
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
-                      Debe ingresar du Nombre
+                <label *ngIf="address?.invalid && (address?.dirty || address?.touched)"
+                class="text-danger">
+                    <label *ngIf="address?.errors?.['required']">
+                      Debe ingresar su Dirección
                     </label>
+                </label>
               </div>
-  
-    
-
-              <!-- Direction Number input -->
-              <div class="form-outline">
-                <input formControlName="nameuser" type="nameuser" id="nameuser" class="form-control form-control-lg"
-                  placeholder="Nombre" />
-              </div>
-  
-              <!-- Dynamic Label -->
-              <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
-                      Debe ingresar du Nombre
-                    </label>
-              </div>
-
 
               <!-- More Address information input -->
               <div class="form-outline">
@@ -146,24 +161,12 @@
   
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
+                    <label *ngIf="nameuser?.errors?.['required']">
                       Debe ingresar du Nombre
                     </label>
               </div>
- 
 
-              <!-- Comuna input -->
-              <div class="form-outline">
-                <input formControlName="nameuser" type="nameuser" id="nameuser" class="form-control form-control-lg"
-                  placeholder="Nombre" />
-              </div>
-  
-              <!-- Dynamic Label -->
-              <div id="spacing">
-                    <label ngIf="nameuser.errors?.['required']">
-                      Debe ingresar du Nombre
-                    </label>
-              </div>
+
   
   
             <div class="text-center text-lg-start mt-4 pt-2">
