@@ -9,13 +9,12 @@ import { Observable } from 'rxjs';
 export class OrdersService {
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   getOrdersByStatus(status: string): Observable<any[]> {
-    const categoryURL = 
-    'https://musicprosolutions.tech/backend/api/order/?status=';
-    return  this.http.get<any[]>(categoryURL+status);
-  
-  
-    }
-}
+    const categoryURL =
+      'https://musicprosolutions.tech/backend/api/order/?status=';
+    return this.http.get<any[]>(categoryURL + status);
 
+
+  }
+}

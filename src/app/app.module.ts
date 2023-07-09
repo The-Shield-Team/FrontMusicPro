@@ -46,7 +46,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
 import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { StockModalComponent } from './stock-modal/stock-modal.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -87,10 +87,11 @@ import { NgxPayPalModule } from 'ngx-paypal';
     ProductsHeaderComponent,
     UserCreateComponent,
     StockModalComponent,
+    OrdersComponent,
   ],
-  
+
   imports: [
-    OrdersComponent,    
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -123,4 +124,4 @@ import { NgxPayPalModule } from 'ngx-paypal';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
