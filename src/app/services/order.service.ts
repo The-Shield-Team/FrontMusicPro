@@ -13,13 +13,15 @@ export class OrderService {
 
   private orderDetails: CartItemDTO[] = [];
 
-  constructor(private http: HttpClient, private cartService: CartService) {}
+  constructor(private http: HttpClient, private cartService: CartService) { }
 
   sendOrderDetails(paymentData: any) {
     let response = {
       "payment_method": paymentData.paymentMethod,
       "auth_code": paymentData.paymentId,
       "price": 1,
+      "client": parseInt(paymentData.userId) || 1,
+      "salesman": 1,
       "details": [] as CartItemDTO[]
     };
 

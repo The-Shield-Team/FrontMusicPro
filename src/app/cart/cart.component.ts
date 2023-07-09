@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
     private router: Router,
     private toUsd: CurrencytransformService,
     private orderService: OrderService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.initConfig();
@@ -162,6 +162,7 @@ export class CartComponent implements OnInit {
           paymentId: data.id,
           paymentTotal: data.purchase_units[0].amount.value,
           paymentMethod: 'PAYPAL',
+          userId: localStorage.getItem('id')
         };
 
         this.orderService
