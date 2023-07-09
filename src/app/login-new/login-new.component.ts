@@ -7,6 +7,7 @@ import { FormBuilder,Validators } from '@angular/forms';
   templateUrl: './login-new.component.html',
   styleUrls: ['./login-new.component.css'],
 })
+
 export class LoginNewComponent {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
