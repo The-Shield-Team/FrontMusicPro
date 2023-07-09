@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: center; align-items: center">
+  <button (click)="getOrders('P')" style="margin: 10px" mat-raised-button color="gray">
+    Aprobar pedidos
+  </button>
+  <button (click)="getOrders('V')" style="margin: 10px" mat-raised-button color="gray">
+    Despachar a bodega
+  </button>
+  <button (click)="getOrders('C')" style="margin: 10px" mat-raised-button color="gray">
+    Pedidos retiro
+  </button>
+  <button (click)="getOrders('S')" style="margin: 10px" mat-raised-button color="gray">
+    Pedidos pendientes
+  </button>
+</div>
+<!-- <mat-list role="list">
+  <mat-list-item *ngFor="let order of orders" role="listitem">
+    {{order.id}}
+  </mat-list-item>
+</mat-list> -->

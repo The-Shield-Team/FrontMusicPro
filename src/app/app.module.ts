@@ -50,6 +50,7 @@ import { ProductsHeaderComponent } from './products-header/products-header.compo
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { StockModalComponent } from './stock-modal/stock-modal.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { StockModalComponent } from './stock-modal/stock-modal.component';
     CartComponent,
     ProductsHeaderComponent,
     UserCreateComponent,
-    StockModalComponent,    
+    StockModalComponent,
+    OrdersComponent,    
   ],
 
   imports: [
