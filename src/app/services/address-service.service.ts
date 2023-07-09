@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 export class AddressServiceService {
   constructor(private http: HttpClient) {}
 
-  getComunas(): Observable<any[]> {
+  getComunas(id: number): Observable<any[]> {
     const sectionURL =
-    'https://musicprosolutions.tech/backend/api/comuna/';
-
-    return this.http.get<any[]>(sectionURL);
+      'https://musicprosolutions.tech/backend/api/comuna/?region=';
+    console.log(sectionURL + id + '/')
+    return this.http.get<any[]>(sectionURL + id);
   }
 
   getRegiones(): Observable<any[]> {

@@ -50,21 +50,29 @@
 
             <!-- Confirmation Password input -->
             <div class="form-outline">
-                <input formControlName="confirmPassword" type="confirmPassword" id="confirmPasswordinput" class="form-control form-control-lg"
-                  placeholder="Confirme su Contraseña" />  
-              </div>
+              <input formControlName="confirmPassword" type="confirmPassword" id="confirmPasswordinput"
+                class="form-control form-control-lg"
+                placeholder="Confirme su Contraseña"
+                [ngClass]="{ 'ng-valid': registerForm.get('confirmPassword')?.valid && registerForm.get('confirmPassword')?.touched,
+                             'ng-invalid': registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched }" />
+            </div>
+            
               <!-- Dynamic Label -->
               <div id="spacing">
-                <label *ngIf="password?.invalid && (password?.dirty || password?.touched)"
-                class="text-danger" >
-                  <label *ngIf="password?.errors?.['required']">
-                    Debe ingresar una Contraseña.
+                  <label *ngIf="confirmPassword?.errors?.['required']"
+                  class="text-danger">
+                    Vuelva a ingresar su Contraseña.
                   </label>
-                  <label *ngIf="registerForm?.hasError('notSame') && (registerForm?.get('confirmPassword')?.dirty || registerForm?.get('confirmPassword')?.touched)">
+                  <label *ngIf="registerForm?.hasError('notSame') && (registerForm?.get('confirmPassword')?.dirty || registerForm?.get('confirmPassword')?.touched)"
+                  class="text-danger">
                     Las Contraseñas no Coinciden 
                   </label>
-                </label>
               </div>
+
+
+
+              
+              
 
             <!-- Name input -->
             <div class="form-outline">
@@ -112,37 +120,47 @@
                       Debe ingresar su Rut
                     </label>
                 </label>
-
-
               </div>
 
                <!-- Region input -->
                <div class="form-outline">
                   <select formControlName="region" type="region" id="region"
-                  class="form-select" aria-label="Default select example">
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                  (change)="onRegionChange()">
+                  <option value="" disabled selected>Seleccione su Región</option>
+                  <option *ngFor="let region of regionOption" [value]="region.id">{{ region.name_region }}</option>
                   </select>
               </div>
-  
 
+              <div id="spacing">
+                <label *ngIf="region?.errors?.['required']"
+                class="text-danger">
+                  Debe seleccionar una Región.
+                </label>
+              </div>
+  
               <!-- Comuna input -->
               <div class="form-outline">
                 <select formControlName="comuna" type="comuna" id="comuna"
-                class="form-select" aria-label="Default select example">
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option value="" disabled selected>Seleccione su Comuna</option>
+                  <option *ngFor="let comuna of comunaOptions" [value]="comuna.id">{{ comuna.name_comuna }}</option>
                 </select>
             </div> 
+
+            <div id="spacing">
+              <label *ngIf="comuna?.errors?.['required']"
+              class="text-danger">
+                Debe seleccionar una Comuna.
+              </label>
+            </div>
 
               <!-- Address input -->
               <div class="form-outline">
                 <input formControlName="address" type="address" id="address" class="form-control form-control-lg"
                   placeholder="Ingrese su Dirección"/>
               </div>
-  
+
               <!-- Dynamic Label -->
               <div id="spacing">
                 <label *ngIf="address?.invalid && (address?.dirty || address?.touched)"
@@ -153,22 +171,35 @@
                 </label>
               </div>
 
-              <!-- More Address information input -->
+              <!-- Number Address input -->
               <div class="form-outline">
-                <input formControlName="nameuser" type="nameuser" id="nameuser" class="form-control form-control-lg"
-                  placeholder="Nombre" />
+                <input formControlName="addressnumber" type="addressnumber" id="addressnumber" class="form-control form-control-lg"
+                  placeholder="Ingrese su número de Dirección"/>
               </div>
-  
+
               <!-- Dynamic Label -->
               <div id="spacing">
-                    <label *ngIf="nameuser?.errors?.['required']">
-                      Debe ingresar du Nombre
+                <label *ngIf="addressnumber?.invalid && (addressnumber?.dirty || addressnumber?.touched)"
+                class="text-danger">
+                    <label *ngIf="addressnumber?.errors?.['required']">
+                      Ingrese número de dirección 
                     </label>
+                </label>
+              </div>             
+
+              <!-- More Address information input -->
+              <div class="form-outline">
+                <input formControlName="moreinfo" type="moreinfo" id="moreinfo" class="form-control form-control-lg"
+                  placeholder="¿Información adicional?" />
               </div>
 
+              <!-- Dynamic Label -->
+              <div id="spacing">
+                <label *ngIf="moreinfo?.invalid && (moreinfo?.dirty || moreinfo?.touched)"
+                class="text-danger">
+                </label>
+              </div>
 
-  
-  
             <div class="text-center text-lg-start mt-4 pt-2">
               <button (click)="login()" type="button" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>

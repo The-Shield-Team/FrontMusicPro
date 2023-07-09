@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AddressServiceService } from '../services/address-service.service';
 
 @Component({
   selector: 'app-client-register',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ClientRegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  regionOption: any[] = [];
+  comunaOptions: any[] = [];
+  
+  constructor(private fb: FormBuilder, private addressService: AddressServiceService) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -22,7 +26,10 @@ export class ClientRegisterComponent implements OnInit {
       region:['',[Validators.required]],
       comuna:['',[Validators.required]],
       address:['',[Validators.required]],
+      addressnumber:['',[Validators.required]],
+      moreinfo:[''],
     }, { validator: this.checkPasswords });
+    this.loadRegionOptions();
   }
 
   checkPasswords(group: FormGroup) {
@@ -34,9 +41,30 @@ export class ClientRegisterComponent implements OnInit {
       const confirmPassword = confirmPasswordControl.value;
   
       return password === confirmPassword ? null : { notSame: true };
-    }
+    } 
   
     return null;
+  }
+
+  loadRegionOptions() {
+    this.addressService.getRegiones().subscribe(
+      (regiones: any[]) => {
+        this.regionOption = regiones;
+      })
+  }
+
+  onRegionChange() {
+    const regionId = this.registerForm.value.region;
+
+    if (regionId) {
+      this.addressService.getComunas(regionId).subscribe(
+        (comunas: any[]) => {
+          this.comunaOptions = comunas;
+        }
+      );
+    } else {
+      this.comunaOptions = [];
+    }
   }
 
   get email() {
@@ -68,6 +96,12 @@ export class ClientRegisterComponent implements OnInit {
   }
   get address() {
     return this.registerForm.get('address');
+  }
+  get addressnumber() {
+    return this.registerForm.get('addressnumber');
+  }
+  get moreinfo() {
+    return this.registerForm.get('moreinfo');
   }
 
   login() {
