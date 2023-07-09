@@ -3,32 +3,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,100&display=swap" rel="stylesheet">
 <main class="container w-75 m-auto mt-5">
 
-	<section class="product row">
+  <section class="product row">
 
-		<div *ngIf="!product; else content">
-			<h3 class="loading text-center">Cargando detalle del producto... <div class="spinner-border" role="status">
-					<span class="visually-hidden">Loading...</span>
-				</div>
-			</h3>
+    <div *ngIf="!product; else content">
+      <h3 class="loading text-center">Cargando detalle del producto... <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </h3>
 
-		</div>
+    </div>
 
-		<ng-template #content>
-			<div class="product__image col-6">
-				<img src="{{ product.image }}" alt="" id="product_image">
-			</div>
+    <ng-template #content>
+      <div class="product__image col-6">
+        <img src="{{ product.image }}" alt="" id="product_image">
+      </div>
 
-			<div class="product__info col-6">
-				<h1 class="product__info--title">{{ product.name }}</h1>
-				<hr>
-				<p class="product__info--description">{{ product.description }}</p>
-				<hr>
-				<p class="product__info--price">{{ product.price | currency:'CLP' }}</p>
-				
-				<app-stock-modal></app-stock-modal>
+      <div class="product__info col-6">
+        <h1 class="product__info--title">{{ product.name }}</h1>
+        <hr>
+        <p class="product__info--description">{{ product.description }}</p>
+        <hr>
+        <p class="product__info--price">{{ product.price | currency:'CLP' }}</p>
+        <button class="product__info--button" (click)="addItemToCart()">Agregar al carrito</button>
 
-			</div>
-		</ng-template>
+        <app-stock-modal></app-stock-modal>
 
-	</section>
+      </div>
+    </ng-template>
+
+  </section>
 </main>
