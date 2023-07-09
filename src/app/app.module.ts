@@ -42,7 +42,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { PaypalComponent } from './paypal/paypal.component';
-import { NgxPayPalModule } from 'ngx-paypal';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginNewComponent } from './login-new/login-new.component';
 import { CartComponent } from './cart/cart.component';
@@ -50,6 +49,10 @@ import { ProductsHeaderComponent } from './products-header/products-header.compo
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { StockModalComponent } from './stock-modal/stock-modal.component';
+import { OrdersComponent } from './orders/orders.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -83,10 +86,11 @@ import { StockModalComponent } from './stock-modal/stock-modal.component';
     CartComponent,
     ProductsHeaderComponent,
     UserCreateComponent,
-    StockModalComponent,    
+    StockModalComponent,
   ],
-
+  
   imports: [
+    OrdersComponent,    
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -108,8 +112,13 @@ import { StockModalComponent } from './stock-modal/stock-modal.component';
     MatRadioModule,
     MatGridListModule,
     MatBadgeModule,
-    NgxPayPalModule,
     MatDialogModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    NgxPayPalModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

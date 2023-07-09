@@ -20,7 +20,7 @@ export class OrderService {
       "payment_method": paymentData.paymentMethod,
       "auth_code": paymentData.paymentId,
       "price": 1,
-      "client": parseInt(paymentData.userId) || 1,
+      "client": parseInt(paymentData.userId) || 1,   
       "salesman": 1,
       "details": [] as CartItemDTO[]
     };
