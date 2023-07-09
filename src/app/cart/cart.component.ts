@@ -162,7 +162,7 @@ export class CartComponent implements OnInit {
           paymentId: data.id,
           paymentTotal: data.purchase_units[0].amount.value,
           paymentMethod: 'PAYPAL',
-          userId: localStorage.getItem('id')
+          userId:  localStorage.getItem('id')
         };
 
         this.orderService

@@ -11,7 +11,7 @@ export class AuthService {
   private loginUrl: string = 'https://musicprosolutions.tech/backend/api/login';
   private loginSuccess: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private setSession(context: User) {
     try {

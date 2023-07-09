@@ -12,8 +12,8 @@ import { NgFor } from '@angular/common';
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css'],
-  imports: [MatListModule, MatButtonModule, MatDividerModule, MatIconModule, MatTableModule, NgFor],
-  standalone: true,
+  // imports: [MatListModule, MatButtonModule, MatDividerModule, MatIconModule, MatTableModule, NgFor],
+  // standalone: true,
 })
 export class OrdersComponent {
   orders: any = [];

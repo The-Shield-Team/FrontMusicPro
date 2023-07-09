@@ -27,6 +27,7 @@ import { LoginNewComponent } from './login-new/login-new.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { CartComponent } from './cart/cart.component';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   // {path: '', component: AppComponent},
@@ -79,7 +80,7 @@ const routes: Routes = [
     path: 'products/:productType/:productCategory',
     component: ProductCategoryComponent,
   },
-  { path: 'paypal', component: PaypalComponent },
+  { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
   { path: 'usercreate', component: UserCreateComponent},
   { path: '**', component: E404Component },
