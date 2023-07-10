@@ -5,3 +5,44 @@
   margin-left: 8px;
   min-width: 120px;
 }
+
+.expanded-row {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.expanded-row table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.expanded-row th,
+.expanded-row td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.expanded-row th {
+  background-color: #f5f5f5;
+}
+
+.expanded-row tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.expanded-row tr:hover {
+  background-color: #ddd;
+}
+
+.expanded-row td:first-child {
+  font-weight: bold;
+}
+
+.expanded-row.collapsed {
+  max-height: 0;
+}
+
+.column-cell {
+  padding-left: 28px;
+}

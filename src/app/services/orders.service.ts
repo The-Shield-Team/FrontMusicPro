@@ -12,9 +12,11 @@ export class OrdersService {
   constructor(private http: HttpClient) { }
   getOrdersByStatus(status: string): Observable<any[]> {
     const URL =
-      'https://musicprosolutions.tech/backend/api/order/?status=';
-    console.log(URL + status)
-    return this.http.get<any[]>(URL + status);
+      'https://musicprosolutions.tech/backend/api/detail_order_with_detail/';
+
+
+    console.log(URL)
+    return this.http.get<any[]>(URL);
 
 
   }
