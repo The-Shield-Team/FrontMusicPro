@@ -21,3 +21,9 @@ height: 100%;
 .ng-invalid:not(form).ng-touched {
   border-bottom: 3px solid #ea2c2c;
 }
+
+#spacing{
+  min-height: 25px ;
+  max-height: 25px;
+}
+

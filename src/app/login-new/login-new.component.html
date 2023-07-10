@@ -6,59 +6,59 @@
           class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div class="d-flex justify-content-center">
+            <img src="../../assets/musicpro_nigga.png" alt="" width="500" height="99">
+          </div>
           <form  [formGroup]="loginForm">
             <div class="divider d-flex align-items-center my-4">
-              <h5 class="text-center fw-bold mx-3 mb-0">Login</h5>
+              <h5 class="text-center fw-bold mx-3 mb-0">Iniciar Sesion</h5>
             </div>
   
             <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input formControlName="email" type="email" id="emailinput" class="form-control form-control-lg"
-                placeholder="example@example.com" />
-  
-                <div *ngIf="email.invalid && (email.dirty || email.touched)"
-                class="text-danger">
-            
-                <div *ngIf="email.errors?.['required']">
-                  Email is required.
-                </div>
-                <div *ngIf="email.errors?.['email']">
-                  Email neds a valid format.
-              </div>
-              </div>
-  
-              <label class="form-label" for="emailinput">Email address</label>
+            <div class="form-outline">
+              <input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+                placeholder="ejemplo@ejemplo.com" />
             </div>
+
+            <div id="spacing">
+              <label *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="text-danger">
+                  <label *ngIf="email.errors?.['required']">
+                    Debe ingresar un correo
+                  </label>
+                  <label *ngIf="email.errors?.['email']">
+                    El correo debe tener un formato valido
+                  </label>
+                </label>
+            </div>
+            
   
             <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input formControlName="password" type="password" id="passwordinput" class="form-control form-control-lg"
-                placeholder="Enter password" />
-  
-                <div *ngIf="password.invalid && (password.dirty || password.touched)"
-                class="text-danger">
-            
-                <div *ngIf="password.errors?.['required']">
-                  Email is required.
-                </div>
-                </div>
-  
-  
-              <label class="form-label" for="passwordinput">Password</label>
+            <div class="form-outline">
+              <input formControlName="password" type="password" id="password" class="form-control form-control-lg"
+                placeholder="Contraseña" />  
             </div>
+
+            <div id="spacing">
+              <label *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="text-danger" >
+                <label *ngIf="password.errors?.['required']">
+                  Debe ingresar una Contraseña.
+                </label>
+              </label>
+            </div>
+            
   
   
             <div class="text-center text-lg-start mt-4 pt-2">
               <button (click)="login()" type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">¿No tienes Cuenta? <a href="#!"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Iniciar Sesion</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">¿No tienes Cuenta? <a routerLink="../client_register"
                   class="link-danger">Registrate</a></p>
             </div>
-  
           </form>
         </div>
       </div>
     </div>
-
   </section>
   

@@ -44,6 +44,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { PaypalComponent } from './paypal/paypal.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginNewComponent } from './login-new/login-new.component';
+
+import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
+
+
+
 import { CartComponent } from './cart/cart.component';
 import { ProductsHeaderComponent } from './products-header/products-header.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -83,6 +88,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     PaypalComponent,
     ProductCategoryComponent,
     LoginNewComponent,
+    EmployeeRegisterComponent,
     CartComponent,
     ProductsHeaderComponent,
     UserCreateComponent,
