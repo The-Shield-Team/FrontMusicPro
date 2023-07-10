@@ -12,6 +12,8 @@ import { CartService } from '../services/cart.service';
 export class ProductDetailComponent {
   product: any;
   product_id: number = 0;
+  isShowStock: Boolean=false; 
+  stock: any;
 
   constructor(
     private productService: ProductsService,
@@ -29,9 +31,14 @@ export class ProductDetailComponent {
     this.getProduct(this.product_id);
   }
 
+  showStock(){
+    this.isShowStock = this.isShowStock?false:true;
+  }
+
   getProduct(id: number) {
     this.productService.getProduct(id).subscribe((data) => {
       this.product = data;
+      this.stock = data.stocks;
     });
   }
 
@@ -45,7 +52,7 @@ export class ProductDetailComponent {
   addItemToCart() {
     const cartItem: CartItem = {
       id: this.product.id,
-      name: this.product.title,
+      name: this.product.name,
       price: this.product.price,
       image: this.product.image,
       quantity: 1,

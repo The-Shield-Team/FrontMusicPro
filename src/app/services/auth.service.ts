@@ -11,14 +11,17 @@ export class AuthService {
   private loginUrl: string = 'https://musicprosolutions.tech/backend/api/login';
   private loginSuccess: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private setSession(context: User) {
     try {
       const token = context.token;
       const id = context.id;
 
-      localStorage.setItem('token', token);
+      if (token !== undefined) {
+        localStorage.setItem('token', token);
+      }
+
       localStorage.setItem('id', id.toString());
       this.loginSuccess.next(true);
     } catch (error) {

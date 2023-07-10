@@ -1,3 +1,7 @@
 .icons {
     gap: 30px;
 }
+
+#cart-icon {
+    cursor: pointer;
+}

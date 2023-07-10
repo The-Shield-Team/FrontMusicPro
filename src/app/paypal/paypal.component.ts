@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ICreateOrderRequest } from "ngx-paypal";
+import { ICreateOrderRequest, IPayPalConfig, NgxPayPalModule } from "ngx-paypal";
 
 @Component({
   selector: "app-paypal",
@@ -7,27 +7,30 @@ import { ICreateOrderRequest } from "ngx-paypal";
   styleUrls: ["./paypal.component.css"]
 })
 export class PaypalComponent implements OnInit {
-  public payPalConfig: any;
-  public showPaypalButtons= false;
+  public payPalConfig?: IPayPalConfig;
+  // public showPaypalButtons = false;
 
-  constructor() {}
 
   ngOnInit() {
+    this.initConfig();
+  }
+
+  private initConfig(): void {
     this.payPalConfig = {
       currency: "USD",
       clientId: "AQ7SXsaf2IiNjFYPOBGZdFDpdCNZcyUS3c3MDpnCq4gYKQm5w4kWAHXUt9ifiV-9ndgmTiK98A5jEex4",
-      createOrder: (data: any) =>
+      createOrderOnClient: (data) =>
         <ICreateOrderRequest>{
           intent: "CAPTURE",
           purchase_units: [
             {
               amount: {
                 currency_code: "USD",
-                value: "9.99",
+                value: "150000",
                 breakdown: {
                   item_total: {
                     currency_code: "USD",
-                    value: "9.99"
+                    value: "150000"
                   }
                 }
               },
@@ -38,7 +41,7 @@ export class PaypalComponent implements OnInit {
                   category: "DIGITAL_GOODS",
                   unit_amount: {
                     currency_code: "USD",
-                    value: "9.99"
+                    value: "150000"
                   }
                 }
               ]
@@ -52,7 +55,7 @@ export class PaypalComponent implements OnInit {
         label: "paypal",
         layout: "vertical"
       },
-      onApprove: (data: any, actions: any) => {
+      onApprove: (data, actions) => {
         console.log(
           "onApprove - transaction was approved, but not authorized",
           data,
@@ -70,6 +73,7 @@ export class PaypalComponent implements OnInit {
           "onClientAuthorization - you should probably inform your server about completed transaction at this point",
           data
         );
+        // this.showSuccess = true;
       },
       onCancel: (data: any, actions: any) => {
         console.log("OnCancel", data, actions);
@@ -83,11 +87,11 @@ export class PaypalComponent implements OnInit {
     };
   }
 
-  pay() {
-    this.showPaypalButtons = true;
-  }
+  // pay() {
+  //   this.showPaypalButtons = true;
+  // }
 
-  back(){
-    this.showPaypalButtons = false;
-  }
+  // back() {
+  //   this.showPaypalButtons = false;
+  // }
 }

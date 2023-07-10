@@ -42,12 +42,22 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { PaypalComponent } from './paypal/paypal.component';
-import { NgxPayPalModule } from 'ngx-paypal';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginNewComponent } from './login-new/login-new.component';
+
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 
 
+
+import { CartComponent } from './cart/cart.component';
+import { ProductsHeaderComponent } from './products-header/products-header.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserCreateComponent } from './user-create/user-create.component';
+import { StockModalComponent } from './stock-modal/stock-modal.component';
+import { OrdersComponent } from './orders/orders.component';
+import { MatListModule } from '@angular/material/list';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -79,10 +89,15 @@ import { EmployeeRegisterComponent } from './employee-register/employee-register
     ProductCategoryComponent,
     LoginNewComponent,
     EmployeeRegisterComponent,
-
+    CartComponent,
+    ProductsHeaderComponent,
+    UserCreateComponent,
+    StockModalComponent,
+    OrdersComponent,
   ],
 
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -104,9 +119,15 @@ import { EmployeeRegisterComponent } from './employee-register/employee-register
     MatRadioModule,
     MatGridListModule,
     MatBadgeModule,
+    MatDialogModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
     NgxPayPalModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

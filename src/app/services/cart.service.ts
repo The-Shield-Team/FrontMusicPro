@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
 export class CartService {
   private items$ = new BehaviorSubject<CartItem[]>([]);
   private cartQuantity$ = new BehaviorSubject<number>(0);
-  private restaurantId = 0;
 
   getCart() {
     return this.items$.asObservable();
@@ -32,6 +31,15 @@ export class CartService {
   removeItem(id: number) {
     this.items$.next(this.items$.getValue().filter((item) => item.id !== id));
     this.cartQuantity$.next(this.cartQuantity$.getValue() - 1);
+  }
+
+  removeProduct(id: number) {
+
+    //Get the quantity of the product to remove
+    const quantity = this.items$.getValue().find((item) => item.id === id)?.quantity || 0;
+
+    this.cartQuantity$.next(this.cartQuantity$.getValue() - quantity);
+    this.items$.next(this.items$.getValue().filter((item) => item.id !== id));
   }
 
   changeQty(quantity: number, id: number) {
@@ -59,11 +67,8 @@ export class CartService {
     return this.cartQuantity$;
   }
 
-  isFromSameRestaurant(newItemRestaurantId: number) {
-    return newItemRestaurantId === this.restaurantId;
-  }
-
-  getRestaurantCartId() {
-    return this.restaurantId;
+  clearCart() {
+    this.items$.next([]);
+    this.cartQuantity$.next(0);
   }
 }
