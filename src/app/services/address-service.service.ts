@@ -21,4 +21,11 @@ export class AddressServiceService {
 
     return this.http.get<any[]>(sectionURL);
   }
+
+  getStore(): Observable<any[]> {
+    const sectionURL =
+    'https://musicprosolutions.tech/backend/api/store/';
+
+    return this.http.get<any[]>(sectionURL);
+  }
 }

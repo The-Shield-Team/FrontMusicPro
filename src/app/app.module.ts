@@ -45,6 +45,7 @@ import { PaypalComponent } from './paypal/paypal.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { LoginNewComponent } from './login-new/login-new.component';
+import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 
 
 
@@ -77,6 +78,7 @@ import { LoginNewComponent } from './login-new/login-new.component';
     PaypalComponent,
     ProductCategoryComponent,
     LoginNewComponent,
+    EmployeeRegisterComponent,
 
   ],
 

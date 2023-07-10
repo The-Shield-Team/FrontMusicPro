@@ -26,6 +26,7 @@ import { PaypalComponent } from './paypal/paypal.component';
 import { LoginNewComponent } from './login-new/login-new.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
+import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 
 const routes: Routes = [
   // {path: '', component: AppComponent},
@@ -69,8 +70,9 @@ const routes: Routes = [
     redirectTo: 'products',
     pathMatch: 'full',
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'login_new', component: LoginNewComponent },
+  { path: 'login_old', component: LoginComponent },
+  { path: 'login', component: LoginNewComponent },
+  { path: 'employee_register', component: EmployeeRegisterComponent },
   { path: 'reset-Password', component: ResetPasswordComponent },
   { path: 'products', component: ProductsAllComponent },
   { path: 'product/:product_id', component: ProductDetailComponent },

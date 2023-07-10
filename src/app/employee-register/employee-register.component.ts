@@ -4,15 +4,17 @@ import { AddressServiceService } from '../services/address-service.service';
 import { RegisterService } from '../services/register.service';
 
 @Component({
-  selector: 'app-client-register',
-  templateUrl: './client-register.component.html',
-  styleUrls: ['./client-register.component.css']
+  selector: 'app-employee-register',
+  templateUrl: './employee-register.component.html',
+  styleUrls: ['./employee-register.component.css']
 })
-export class ClientRegisterComponent implements OnInit {
+export class EmployeeRegisterComponent {
   registerForm!: FormGroup;
 
-  regionOption: any[] = [];
-  comunaOptions: any[] = [];
+  storeOption: any[] = [];
+  G:string='G';
+  S:string='S';
+  employeeType:string = '';
   
   constructor(private fb: FormBuilder, private addressService: AddressServiceService, private register: RegisterService) {}
 
@@ -24,11 +26,9 @@ export class ClientRegisterComponent implements OnInit {
       nameuser: ['', [Validators.required]],
       lastnameuser: ['', [Validators.required]],
       rut:['',[Validators.required]],
-      region:['',[Validators.required]],
-      comuna:['',[Validators.required]],
-      address:['',[Validators.required]],
-      addressnumber:['',[Validators.required]],
-      moreinfo:[''],
+      store:['',[Validators.required]],
+      employee:['',[Validators.required]],
+
     }, { validator: this.checkPasswords });
     this.loadRegionOptions();
   }
@@ -48,24 +48,10 @@ export class ClientRegisterComponent implements OnInit {
   }
 
   loadRegionOptions() {
-    this.addressService.getRegiones().subscribe(
-      (regiones: any[]) => {
-        this.regionOption = regiones;
+    this.addressService.getStore().subscribe(
+      (store: any[]) => {
+        this.storeOption = store;
       })
-  }
-
-  onRegionChange() {
-    const regionId = this.registerForm.value.region;
-
-    if (regionId) {
-      this.addressService.getComunas(regionId).subscribe(
-        (comunas: any[]) => {
-          this.comunaOptions = comunas;
-        }
-      );
-    } else {
-      this.comunaOptions = [];
-    }
   }
 
   get email() {
@@ -89,40 +75,44 @@ export class ClientRegisterComponent implements OnInit {
   get rut() {
     return this.registerForm.get('rut');
   }
-  get region() {
-    return this.registerForm.get('region');
+  get store() {
+    return this.registerForm.get('store');
   }
-  get comuna() {
-    return this.registerForm.get('comuna');
+
+  get employee() {
+    return this.registerForm.get('employee')
   }
-  get address() {
-    return this.registerForm.get('address');
-  }
-  get addressnumber() {
-    return this.registerForm.get('addressnumber');
-  }
-  get moreinfo() {
-    return this.registerForm.get('moreinfo');
-  }
+
+
 
   submitForm() {
     const formValues = this.registerForm.value;
-    const requestData = {
-      "username": formValues.email,
-      "rut": formValues.rut,
-      "email": formValues.email,
-      "password": formValues.password,
-      "type_user": 'C',
-      "name_user": formValues.nameuser,
-      "last_name_user": formValues.lastnameuser,
-      "client": {
-        "address": formValues.address,
-        "number_address": formValues.addressnumber,
-        "additional_address_info": formValues.moreinfo,
-        "comuna": formValues.comuna}
-  };this.register.postRegister(requestData);}
+    if (formValues.employee === 'G'){
+      const requestData = {
+        "username": formValues.email,
+        "rut": formValues.rut,
+        "email": formValues.email,
+        "password": formValues.password,
+        "type_user": formValues.employee,
+        "name_user": formValues.nameuser,
+        "last_name_user": formValues.lastnameuser,
+        "grocer": {
+          "store": formValues.store}
+    };this.register.postRegister(requestData)
+    }
+    else{
+      const requestData = {
+        "username": formValues.email,
+        "rut": formValues.rut,
+        "email": formValues.email,
+        "password": formValues.password,
+        "type_user": formValues.employee,
+        "name_user": formValues.nameuser,
+        "last_name_user": formValues.lastnameuser,
+        "salesman": {
+          "store": formValues.store}
+    };this.register.postRegister(requestData)
+    }}
 
-
-  
 }
 
