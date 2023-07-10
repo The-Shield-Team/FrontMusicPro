@@ -1,19 +1,11 @@
 <div style="display: flex; justify-content: center; align-items: center">
-  <button (click)="getOrders('P')" style="margin: 10px" mat-raised-button color="gray">
+  <button (click)="getOrders('G')" style="margin: 10px" mat-raised-button color="gray">
     Aprobar pedidos
   </button>
-  <button (click)="getOrders('A')" style="margin: 10px" mat-raised-button color="gray">
-    Despachar a bodega
+  <button (click)="getOrders('B')" style="margin: 10px" mat-raised-button color="gray">
+    Despacho a Vendedor
   </button>
-  <button (click)="getOrders('V')" style="margin: 10px" mat-raised-button color="gray">
-    Gestionar Entrega
-  </button>
-  <button (click)="getOrders('S')" style="margin: 10px" mat-raised-button color="gray">
-    Pedidos para retiro
-  </button>
-  <button (click)="getOrders('E')" style="margin: 10px" mat-raised-button color="gray">
-    Pedidos OK
-  </button>
+
 </div>
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
   <ng-container matColumnDef="{{column}}" *ngFor="let column of columns">

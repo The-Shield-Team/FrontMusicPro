@@ -58,6 +58,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { MatListModule } from '@angular/material/list';
 import { MatDivider, MatDividerModule } from '@angular/material/divider';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { OrdersGrocerComponent } from './orders-grocer/orders-grocer.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     UserCreateComponent,
     StockModalComponent,
     OrdersComponent,
+    OrdersGrocerComponent,
   ],
 
   imports: [

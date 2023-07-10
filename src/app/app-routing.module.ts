@@ -32,6 +32,7 @@ import { EmployeeRegisterComponent } from './employee-register/employee-register
 import { CartComponent } from './cart/cart.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrdersGrocerComponent } from './orders-grocer/orders-grocer.component';
 
 
 const routes: Routes = [
@@ -86,7 +87,7 @@ const routes: Routes = [
     path: 'products/:productType/:productCategory',
     component: ProductCategoryComponent,
   },
-  {path: 'client_register', component: ClientRegisterComponent},
+  { path: 'client_register', component: ClientRegisterComponent },
   {
     path: 'products/:productType/:productCategory/:productSubcategory',
     component: ProductsAllComponent,
@@ -94,8 +95,9 @@ const routes: Routes = [
   { path: 'paypal', component: PaypalComponent },
 
   { path: 'orders', component: OrdersComponent },
+  { path: 'grocer_order', component: OrdersGrocerComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'usercreate', component: UserCreateComponent},
+  { path: 'usercreate', component: UserCreateComponent },
   { path: '**', component: E404Component },
 
 ];
@@ -104,4 +106,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

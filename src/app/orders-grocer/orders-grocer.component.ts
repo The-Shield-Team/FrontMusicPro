@@ -4,11 +4,10 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
-
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css'],
+  selector: 'app-orders-grocer',
+  templateUrl: './orders-grocer.component.html',
+  styleUrls: ['./orders-grocer.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0', visibility: 'hidden' })),
@@ -19,7 +18,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 
 
-export class OrdersComponent {
+export class OrdersGrocerComponent {
   dataSource: MatTableDataSource<any>;
   columns = ['id', 'total', 'status'];
   columnsToDisplayWithExpand = [...this.columns, 'expand'];
@@ -72,6 +71,7 @@ export class OrdersComponent {
             window.location.reload()
           })
         break;
+
       case 'S':
         this.ordersService.updateOrder(order, "E")
           .subscribe(response => {
