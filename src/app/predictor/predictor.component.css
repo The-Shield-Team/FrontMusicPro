@@ -1,5 +1,6 @@
 main {
 	width: 100%;
+	background-color: rgb(248, 251, 255);
 }
 
 form {
@@ -9,3 +10,16 @@ form {
 	justify-content: center;
 	width: 100%;
 }
+
+h1 {
+	color: #5461aa !important;
+}
+
+#clasification {
+	border-left: 3px solid #5461aa;
+}
+
+#regresion {
+	border-right: 3px solid #5461aa;
+}
+
