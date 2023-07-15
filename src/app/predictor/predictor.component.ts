@@ -130,8 +130,8 @@ export class DialogContentExampleDialog {
 	
     if (typeof this.data.result == 'boolean') {
       this.result = this.data.result
-        ? 'El jugador gana la ronda'
-        : 'El jugador pierde la ronda';
+        ? 'El jugador sobrevive la ronda'
+        : 'El jugador no sobrevive la ronda';
     } else if (typeof this.data.result == 'number') {
       this.result =
         'El jugador tiene una posibilidad de utilizar rifle de asalto como arma primaria de ' +
