@@ -17,9 +17,11 @@ h1 {
 
 #clasification {
 	border-left: 3px solid #5461aa;
+	min-height: 120vh;
 }
 
 #regresion {
 	border-right: 3px solid #5461aa;
+	min-height: 120vh;
 }
 
