@@ -14,18 +14,18 @@ import { Inject } from '@angular/core';
 })
 export class PredictorComponent {
   // Regresion attributes
-  round_starting_value_r: FormControl = new FormControl();
-  non_lethal_grenade_r: FormControl = new FormControl();
-  lethal_grenade_r: FormControl = new FormControl();
+  round_starting_value_r: FormControl = new FormControl(4000);
+  non_lethal_grenade_r: FormControl = new FormControl(1);
+  lethal_grenade_r: FormControl = new FormControl(1);
 
   // Clasification attributes
-  lethal_grenade_c: FormControl = new FormControl();
-  non_lethal_grenade_c: FormControl = new FormControl();
-  round_starting_value_c: FormControl = new FormControl();
-  primary_assault_rifle_c: FormControl = new FormControl();
-  round_kills_c: FormControl = new FormControl();
-  round_headshots_c: FormControl = new FormControl();
-  round_flank_kills_c: FormControl = new FormControl();
+  lethal_grenade_c: FormControl = new FormControl(0);
+  non_lethal_grenade_c: FormControl = new FormControl(0);
+  round_starting_value_c: FormControl = new FormControl(2000);
+  primary_assault_rifle_c: FormControl = new FormControl(0);
+  round_kills_c: FormControl = new FormControl(0);
+  round_headshots_c: FormControl = new FormControl(0);
+  round_flank_kills_c: FormControl = new FormControl(0);
 
   error = '';
 
