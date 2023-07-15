@@ -46,6 +46,7 @@ import { ProductCategoryComponent } from './product-category/product-category.co
 import { LoginNewComponent } from './login-new/login-new.component';
 
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -129,7 +130,8 @@ import { PredictorComponent } from './predictor/predictor.component';
     MatButtonModule,
     MatDividerModule,
     NgxPayPalModule,
-    MatTableModule
+    MatTableModule,
+	MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

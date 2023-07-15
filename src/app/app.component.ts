@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   isLoginPage(): boolean {
-    return this.router.url === '/login' || this.router.url === '/login_new';
+    return this.router.url === '/login' || this.router.url === '/login_new' || this.router.url === '/predictor';
   }
 }

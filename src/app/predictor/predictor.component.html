@@ -1,1 +1,80 @@
-<p>predictor works!</p>
+<main class="row w-100 container-fluid mx-auto">
+
+	<section id="regresion" class="col border-end border-success border-3 vh-100 p-0">
+		<h1 class="text-dark text-center mt-5 fs-2">Modelo de Regresión</h1>
+		<h4 class="text-secondary text-center fs-5">Posibilidad de utilizar rifle de asalto en la ronda</h4>
+
+		<form action="">
+			<mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Valor equipamiento inicial</mat-label>
+				<input [formControl]="round_starting_value_r" type="number" matInput required>
+				<!-- Agregar ayuda visual indicar valor entre 0 y 4000 -->
+				
+			</mat-form-field>
+
+            <mat-form-field id="form-input" appearance="outline"  class="mt-2 w-75 mb-2">
+                <mat-label >Granadas no letales lanzadas</mat-label>
+                <input matInput [formControl]="non_lethal_grenade_r" type="number" required>
+            </mat-form-field>
+
+			<mat-form-field id="form-input" appearance="outline"  class="mt-2 w-75">
+                <mat-label >Granadas letales lanzadas</mat-label>
+                <input matInput [formControl]="lethal_grenade_r" type="number" required>
+            </mat-form-field>
+
+
+            <button type="submit" mat-stroked-button color="primary" (click)="getPredictedRegresionValue()">Predecir</button>
+        
+        </form>
+
+	</section>
+	<section id="clasification" class="col border-start border-3 border-success vh-100 p-0">
+		<h1 class="text-dark text-center mt-5 fs-2">Modelo de Clasificación</h1>
+		<h4 class="text-secondary text-center fs-5">Posibilidad de que el jugador gane la ronda</h4>
+
+		<form action="">
+			<mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Valor equipamiento inicial</mat-label>
+				<input [formControl]="round_starting_value_c" type="number" matInput required>
+				<!-- Agregar ayuda visual indicar valor entre 0 y 4000 -->
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Granadas no letales lanzadas</mat-label>
+				<input matInput [formControl]="non_lethal_grenade_c" type="number" required>
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75">
+				<mat-label>Granadas letales lanzadas</mat-label>
+				<input matInput [formControl]="lethal_grenade_c" type="number" required>
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Arma principal: Rifle de asalto</mat-label>
+				<input matInput [formControl]="primary_assault_rifle_c" type="text" required>
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Kills de la ronda</mat-label>
+				<input matInput [formControl]="round_kills_c" type="number" required>
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Headshots de la ronda</mat-label>
+				<input matInput [formControl]="round_headshots_c" type="number" required>
+			  </mat-form-field>
+			  
+			  <mat-form-field id="form-input" appearance="outline" class="mt-2 w-75 mb-2">
+				<mat-label>Kills flanqueando en la ronda</mat-label>
+				<input matInput [formControl]="round_flank_kills_c" type="number" required>
+			  </mat-form-field>
+			  
+            <button type="submit" mat-stroked-button color="primary" (click)="getPredictedClasificationValue()">Predecir</button>
+        
+        </form>
+
+		
+
+	</section>
+
+</main>
