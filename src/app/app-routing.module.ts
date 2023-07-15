@@ -33,10 +33,17 @@ import { CartComponent } from './cart/cart.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersGrocerComponent } from './orders-grocer/orders-grocer.component';
+import { PredictorComponent } from './predictor/predictor.component';
 
 
 const routes: Routes = [
-  // {path: '', component: AppComponent},
+  // {path: '', component: AppComponent},	
+  {
+	path: 'predictor',
+	component: PredictorComponent,
+  },
+
+
   { path: 'client', component: ClientComponent },
   {
     path: 'admin',
